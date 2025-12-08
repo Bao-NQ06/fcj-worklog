@@ -26,14 +26,13 @@ Create Amazon API Gateway as the entry point for AI service requests.
 
 | Method | Path | Description |
 |--------|------|-------------|
-| POST | `/ai/writing-assessment` | Submit writing sample |
-| POST | `/ai/speaking-assessment` | Submit audio recording |
-| POST | `/ai/generate-flashcards` | Upload document |
-| GET | `/ai/results/{id}` | Get assessment results |
+| POST | `/writing/evaluate` | Submit writing sample |
+| POST | `/speaking/evaluate` | Submit audio recording |
+| POST | `/flashcards/generate` | Generate flashcard |
+| POST | `/upload/audio` | Upload audio |
+| POST | `/upload/document` | Upload document |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: API Gateway resource configuration
-{{% /notice %}}
+![API setup](/images/5-Workshop/5.7-AI-Service/api.png)
 
 #### Configure SQS Integration
 
@@ -61,8 +60,8 @@ Action=SendMessage&MessageBody=$util.urlEncode($input.body)&QueueUrl=$util.urlEn
 #### Deploy API
 
 1. **Actions** → **Deploy API**
-2. Stage name: `prod`
-3. Note the invoke URL: `https://{api-id}.execute-api.ap-southeast-1.amazonaws.com/prod`
+2. Stage name: `dev`
+3. Note the invoke URL: `https://{api-id}.execute-api.ap-southeast-1.amazonaws.com/dev`
 
 #### AWS CLI Commands
 

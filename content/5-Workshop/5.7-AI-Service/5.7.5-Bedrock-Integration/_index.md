@@ -18,9 +18,7 @@ Configure Amazon Bedrock for AI model access including Gemma 3 12B and Titan Emb
    - **Amazon Titan Embeddings V2** (for RAG)
    - **Meta Llama 3** or **Anthropic Claude** (optional)
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Bedrock model access page
-{{% /notice %}}
+![AI model](/images/5-Workshop/5.7-AI-Service/bedrock.png)
 
 #### Test Bedrock API
 
@@ -68,7 +66,7 @@ For smart query generation:
 import google.generativeai as genai
 
 genai.configure(api_key=os.environ['GEMINI_API_KEY'])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 response = model.generate_content(
     f"""Analyze this document and generate 10 intelligent questions:

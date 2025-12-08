@@ -18,9 +18,8 @@ Cấu hình Amazon Bedrock cho AI model access bao gồm Gemma 3 12B và Titan E
    - **Amazon Titan Embeddings V2** (cho RAG)
    - **Meta Llama 3** hoặc **Anthropic Claude** (optional)
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Bedrock model access page
-{{% /notice %}}
+![AI model](/images/5-Workshop/5.7-AI-Service/bedrock.png)
+
 
 #### Test Bedrock API
 
@@ -68,7 +67,7 @@ Cho smart query generation:
 import google.generativeai as genai
 
 genai.configure(api_key=os.environ['GEMINI_API_KEY'])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 response = model.generate_content(
     f"""Analyze this document and generate 10 intelligent questions:

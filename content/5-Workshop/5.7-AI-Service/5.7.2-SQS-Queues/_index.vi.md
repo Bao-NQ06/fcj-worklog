@@ -12,34 +12,33 @@ Tạo Amazon SQS queues cho asynchronous AI processing với Dead Letter Queues 
 
 #### Tạo Writing Assessment Queue
 
-| Cài Đặt | Giá Trị |
+| Setting | Value |
 |---------|-------|
-| **Name** | `ielts-writing-queue` |
+| **Name** | `ielts-ai-dev-writing-evaluation` |
 | **Type** | Standard |
 | **Visibility timeout** | 5 minutes |
 | **Message retention** | 14 days |
-| **Dead-letter queue** | ielts-writing-dlq |
+| **Dead-letter queue** | ielts-ai-dev-writing-evaluation-dlq |
 | **Max receives** | 3 |
 
-#### Tạo Speaking Assessment Queue
+#### Create Speaking Assessment Queue
 
-| Cài Đặt | Giá Trị |
+| Setting | Value |
 |---------|-------|
-| **Name** | `ielts-speaking-queue` |
+| **Name** | `ielts-ai-dev-speaking-evaluation` |
 | **Visibility timeout** | 15 minutes |
-| **Dead-letter queue** | ielts-speaking-dlq |
+| **Dead-letter queue** | ielts-ai-dev-speaking-evaluation-dlq |
 
-#### Tạo Flashcard Generation Queue
+#### Create Flashcard Generation Queue
 
-| Cài Đặt | Giá Trị |
+| Setting | Value |
 |---------|-------|
-| **Name** | `ielts-flashcard-queue` |
+| **Name** | `ielts-ai-dev-flashcard-generation` |
 | **Visibility timeout** | 15 minutes |
-| **Dead-letter queue** | ielts-flashcard-dlq |
+| **Dead-letter queue** | ielts-ai-dev-flashcard-generation-dlq |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: SQS queue configuration
-{{% /notice %}}
+![SQS](/images/5-Workshop/5.7-AI-Service/sqs.png)
+
 
 #### AWS CLI Commands
 

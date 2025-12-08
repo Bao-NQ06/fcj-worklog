@@ -14,32 +14,30 @@ Create Amazon SQS queues for asynchronous AI processing with Dead Letter Queues 
 
 | Setting | Value |
 |---------|-------|
-| **Name** | `ielts-writing-queue` |
+| **Name** | `ielts-ai-dev-writing-evaluation` |
 | **Type** | Standard |
 | **Visibility timeout** | 5 minutes |
 | **Message retention** | 14 days |
-| **Dead-letter queue** | ielts-writing-dlq |
+| **Dead-letter queue** | ielts-ai-dev-writing-evaluation-dlq |
 | **Max receives** | 3 |
 
 #### Create Speaking Assessment Queue
 
 | Setting | Value |
 |---------|-------|
-| **Name** | `ielts-speaking-queue` |
+| **Name** | `ielts-ai-dev-speaking-evaluation` |
 | **Visibility timeout** | 15 minutes |
-| **Dead-letter queue** | ielts-speaking-dlq |
+| **Dead-letter queue** | ielts-ai-dev-speaking-evaluation-dlq |
 
 #### Create Flashcard Generation Queue
 
 | Setting | Value |
 |---------|-------|
-| **Name** | `ielts-flashcard-queue` |
+| **Name** | `ielts-ai-dev-flashcard-generation` |
 | **Visibility timeout** | 15 minutes |
-| **Dead-letter queue** | ielts-flashcard-dlq |
+| **Dead-letter queue** | ielts-ai-dev-flashcard-generation-dlq |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: SQS queue configuration
-{{% /notice %}}
+![SQS](/images/5-Workshop/5.7-AI-Service/sqs.png)
 
 #### AWS CLI Commands
 

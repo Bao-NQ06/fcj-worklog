@@ -26,14 +26,13 @@ Tạo Amazon API Gateway làm entry point cho AI service requests.
 
 | Method | Path | Description |
 |--------|------|-------------|
-| POST | `/ai/writing-assessment` | Submit writing sample |
-| POST | `/ai/speaking-assessment` | Submit audio recording |
-| POST | `/ai/generate-flashcards` | Upload document |
-| GET | `/ai/results/{id}` | Get assessment results |
+| POST | `/writing/evaluate` | Submit writing sample |
+| POST | `/speaking/evaluate` | Submit audio recording |
+| POST | `/flashcards/generate` | Generate flashcard |
+| POST | `/upload/audio` | Upload audio |
+| POST | `/upload/document` | Upload document |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: API Gateway resource configuration
-{{% /notice %}}
+![API setup](/images/5-Workshop/5.7-AI-Service/api.png)
 
 #### Cấu Hình SQS Integration
 
