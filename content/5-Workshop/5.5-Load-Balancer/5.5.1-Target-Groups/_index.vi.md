@@ -26,9 +26,6 @@ Target groups route requests đến registered targets (ECS tasks) và thực hi
 | **Unhealthy threshold** | 3 |
 | **Interval** | 30 seconds |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Frontend target group configuration
-{{% /notice %}}
 
 #### Tạo Backend Target Group
 

@@ -22,9 +22,6 @@ Store sensitive credentials securely in AWS Secrets Manager.
 | **Database** | ielts-prod-db |
 | **Secret name** | `ielts-prod/db` |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Secrets Manager configuration
-{{% /notice %}}
 
 #### Create API Keys Secret
 

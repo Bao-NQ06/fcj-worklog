@@ -31,9 +31,6 @@ aws logs create-log-group --log-group-name /ecs/ielts-backend
 aws logs put-retention-policy --log-group-name /ecs/ielts-backend --retention-in-days 30
 ```
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: CloudWatch Log Groups
-{{% /notice %}}
 
 #### Log Insights Queries
 

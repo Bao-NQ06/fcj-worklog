@@ -26,9 +26,6 @@ Target groups route requests to registered targets (ECS tasks) and perform healt
 | **Unhealthy threshold** | 3 |
 | **Interval** | 30 seconds |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Frontend target group configuration
-{{% /notice %}}
 
 #### Create Backend Target Group
 

@@ -24,9 +24,6 @@ Create and configure the Application Load Balancer with listener rules for path-
 | **Subnets** | Public subnets (1a, 1b) |
 | **Security group** | ielts-prod-alb-sg |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ALB creation wizard
-{{% /notice %}}
 
 #### Configure Listeners
 

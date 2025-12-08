@@ -20,9 +20,6 @@ Configure Route 53 DNS records and AWS Certificate Manager (ACM) for SSL/TLS cer
 | **Domain names** | `bandup.bughunters.site`, `*.bandup.bughunters.site` |
 | **Validation method** | DNS validation |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ACM certificate request
-{{% /notice %}}
 
 #### DNS Validation
 
@@ -47,9 +44,6 @@ Configure Route 53 DNS records and AWS Certificate Manager (ACM) for SSL/TLS cer
 | **Route traffic to** | ALB in ap-southeast-1 |
 | **Routing policy** | Simple |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route 53 A record creation
-{{% /notice %}}
 
 #### AWS CLI Commands
 

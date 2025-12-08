@@ -29,9 +29,6 @@ Tạo AWS CodePipeline cho automated deployment workflow.
 | **Branch** | main |
 | **Trigger** | Push to branch |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: CodePipeline source configuration
-{{% /notice %}}
 
 #### Build Stage
 

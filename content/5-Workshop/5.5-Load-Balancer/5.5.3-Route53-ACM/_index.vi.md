@@ -20,9 +20,6 @@ Cấu hình Route 53 DNS records và AWS Certificate Manager (ACM) cho SSL/TLS c
 | **Domain names** | `bandup.bughunters.site`, `*.bandup.bughunters.site` |
 | **Validation method** | DNS validation |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ACM certificate request
-{{% /notice %}}
 
 #### DNS Validation
 
@@ -47,9 +44,6 @@ Cấu hình Route 53 DNS records và AWS Certificate Manager (ACM) cho SSL/TLS c
 | **Route traffic to** | ALB in ap-southeast-1 |
 | **Routing policy** | Simple |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route 53 A record creation
-{{% /notice %}}
 
 #### AWS CLI Commands
 

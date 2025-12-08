@@ -42,9 +42,6 @@ Tạo Amazon RDS PostgreSQL với Multi-AZ deployment cho high availability.
 | **Backup retention** | 7 days |
 | **Encryption** | Enabled |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: RDS creation wizard
-{{% /notice %}}
 
 #### AWS CLI Command
 

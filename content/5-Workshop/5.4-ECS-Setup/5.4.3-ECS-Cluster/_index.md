@@ -39,10 +39,6 @@ An ECS Cluster is a logical grouping of tasks and services. In this step, you wi
 
 Click **Create**.
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Cluster creation wizard
-{{% /notice %}}
-
 #### AWS CLI Command
 
 ```bash
@@ -125,10 +121,6 @@ With Service Connect, the frontend can call the backend using `http://backend.ie
    - Capacity providers: FARGATE, FARGATE_SPOT
    - Container Insights: Enabled
    - Namespace: ielts.local
-
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Cluster overview page
-{{% /notice %}}
 
 **CLI Verification:**
 

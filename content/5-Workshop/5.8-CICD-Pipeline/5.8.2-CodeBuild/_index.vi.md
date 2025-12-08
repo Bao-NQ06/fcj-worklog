@@ -48,9 +48,6 @@ artifacts:
   files: imagedefinitions.json
 ```
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: CodeBuild project configuration
-{{% /notice %}}
 
 #### Environment Variables
 

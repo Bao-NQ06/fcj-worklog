@@ -29,9 +29,6 @@ Cấu hình AWS WAF để bảo vệ ứng dụng khỏi các web attacks phổ 
 | AWS-AWSManagedRulesSQLiRuleSet | Block | 2 |
 | AWS-AWSManagedRulesKnownBadInputsRuleSet | Block | 3 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: WAF Web ACL configuration
-{{% /notice %}}
 
 #### Custom Rate Limiting Rule
 

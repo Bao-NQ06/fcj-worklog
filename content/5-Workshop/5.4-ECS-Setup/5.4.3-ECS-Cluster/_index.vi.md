@@ -39,9 +39,6 @@ ECS Cluster là logical grouping của tasks và services. Trong bước này, b
 
 Click **Create**.
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Cluster creation wizard
-{{% /notice %}}
 
 #### AWS CLI Command
 
@@ -126,9 +123,6 @@ Với Service Connect, frontend có thể gọi backend sử dụng `http://back
    - Container Insights: Enabled
    - Namespace: ielts.local
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Cluster overview page
-{{% /notice %}}
 
 **CLI Verification:**
 

@@ -24,9 +24,6 @@ Tạo và cấu hình Application Load Balancer với listener rules cho path-ba
 | **Subnets** | Public subnets (1a, 1b) |
 | **Security group** | ielts-prod-alb-sg |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ALB creation wizard
-{{% /notice %}}
 
 #### Cấu Hình Listeners
 

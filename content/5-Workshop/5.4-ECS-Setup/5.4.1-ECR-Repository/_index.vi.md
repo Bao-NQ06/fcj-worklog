@@ -30,9 +30,6 @@ Amazon Elastic Container Registry (ECR) là fully managed container registry lư
 
 Click **Create repository**.
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECR repository creation form
-{{% /notice %}}
 
 **Bước 3: Tạo Backend Repository**
 
@@ -183,9 +180,6 @@ docker tag ielts-backend:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.co
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/ielts-backend:latest
 ```
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECR repositories với pushed images
-{{% /notice %}}
 
 #### Xác Minh Images
 

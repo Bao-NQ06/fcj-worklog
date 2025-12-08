@@ -59,9 +59,6 @@ aws cloudwatch put-metric-alarm \
     --dimensions Name=FunctionName,Value=ielts-writing-evaluate
 ```
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: CloudWatch Alarms dashboard
-{{% /notice %}}
 
 #### SNS Topic cho Alerts
 

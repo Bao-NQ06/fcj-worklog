@@ -58,9 +58,6 @@ Deploy the backend service first as it's required by the frontend.
 | **Health check path** | `/actuator/health` |
 | **Container port** | 8080 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Backend service configuration
-{{% /notice %}}
 
 #### Create Frontend Service
 
@@ -103,9 +100,6 @@ Deploy the backend service first as it's required by the frontend.
 | **Health check path** | `/api/health` |
 | **Container port** | 3000 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Frontend service configuration
-{{% /notice %}}
 
 #### AWS CLI Commands
 
@@ -213,10 +207,6 @@ aws application-autoscaling put-scaling-policy \
    - **Status**: Active
    - **Running tasks**: 2/2
    - **Deployments**: 1 (PRIMARY)
-
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Services list showing running tasks
-{{% /notice %}}
 
 **CLI Verification:**
 

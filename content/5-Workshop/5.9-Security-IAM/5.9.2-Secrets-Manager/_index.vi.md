@@ -22,9 +22,6 @@ Lưu trữ sensitive credentials an toàn trong AWS Secrets Manager.
 | **Database** | ielts-prod-db |
 | **Secret name** | `ielts-prod/db` |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Secrets Manager configuration
-{{% /notice %}}
 
 #### Tạo API Keys Secret
 

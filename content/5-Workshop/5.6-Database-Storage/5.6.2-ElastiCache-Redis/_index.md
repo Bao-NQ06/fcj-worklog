@@ -34,9 +34,6 @@ Create Amazon ElastiCache Redis for session management and caching.
 | **Encryption at-rest** | Enabled |
 | **Encryption in-transit** | Enabled |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ElastiCache Redis creation
-{{% /notice %}}
 
 #### AWS CLI Command
 

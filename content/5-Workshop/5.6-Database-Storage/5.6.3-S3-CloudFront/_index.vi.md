@@ -56,9 +56,6 @@ Tạo S3 bucket cho media storage và CloudFront distribution cho CDN.
 | **Price class** | Use all edge locations |
 | **SSL certificate** | ACM certificate |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: CloudFront distribution configuration
-{{% /notice %}}
 
 #### Lifecycle Policy
 

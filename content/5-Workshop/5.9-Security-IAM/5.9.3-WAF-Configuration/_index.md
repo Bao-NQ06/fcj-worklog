@@ -29,9 +29,6 @@ Configure AWS WAF to protect the application from common web attacks.
 | AWS-AWSManagedRulesSQLiRuleSet | Block | 2 |
 | AWS-AWSManagedRulesKnownBadInputsRuleSet | Block | 3 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: WAF Web ACL configuration
-{{% /notice %}}
 
 #### Custom Rate Limiting Rule
 

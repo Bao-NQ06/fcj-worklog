@@ -129,9 +129,6 @@ aws iam put-role-policy \
 | **Region** | ap-southeast-1 |
 | **Stream prefix** | ecs |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Frontend task definition configuration
-{{% /notice %}}
 
 #### Tạo Backend Task Definition
 
@@ -176,9 +173,6 @@ aws iam put-role-policy \
 | **Retries** | 3 |
 | **Start period** | 60 seconds |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Backend task definition configuration
-{{% /notice %}}
 
 #### Task Definition JSON (CLI)
 

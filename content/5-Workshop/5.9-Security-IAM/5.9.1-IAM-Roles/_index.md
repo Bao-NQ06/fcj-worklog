@@ -59,9 +59,6 @@ Create IAM roles for ECS tasks, Lambda functions, and other services.
 }
 ```
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: IAM role configuration
-{{% /notice %}}
 
 #### Best Practices
 

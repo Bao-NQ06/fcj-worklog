@@ -58,9 +58,6 @@ Deploy backend service trước vì frontend cần nó.
 | **Health check path** | `/actuator/health` |
 | **Container port** | 8080 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Backend service configuration
-{{% /notice %}}
 
 #### Tạo Frontend Service
 
@@ -103,9 +100,6 @@ Deploy backend service trước vì frontend cần nó.
 | **Health check path** | `/api/health` |
 | **Container port** | 3000 |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Frontend service configuration
-{{% /notice %}}
 
 #### AWS CLI Commands
 
@@ -214,9 +208,6 @@ aws application-autoscaling put-scaling-policy \
    - **Running tasks**: 2/2
    - **Deployments**: 1 (PRIMARY)
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ECS Services list hiển thị running tasks
-{{% /notice %}}
 
 **CLI Verification:**
 
