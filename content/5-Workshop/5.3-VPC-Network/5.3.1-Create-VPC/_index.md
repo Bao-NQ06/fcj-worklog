@@ -36,9 +36,7 @@ Select **VPC and more** to create VPC with all required components automatically
 | **DNS hostnames** | Enable |
 | **DNS resolution** | Enable |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC creation wizard with settings configured
-{{% /notice %}}
+
 
 **Step 3: Review and Create**
 
@@ -54,9 +52,7 @@ The creation process will automatically create:
 - 2 NAT Gateways (one per AZ)
 - Route tables for each subnet tier
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC creation progress and success message
-{{% /notice %}}
+
 
 #### Alternative: Create VPC Using AWS CLI
 
@@ -95,9 +91,7 @@ After creation, verify the following in the VPC console:
    - Displays Internet Gateway attachment
    - Shows NAT Gateway placements
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC Resource Map showing the complete topology
-{{% /notice %}}
+
 
 #### Naming Convention
 

@@ -19,9 +19,7 @@ Trong thiết kế Multi-AZ, chúng ta triển khai một NAT Gateway cho mỗi 
 | `ielts-prod-nat-1a` | Public Subnet 1a | Outbound cho AZ-1 private subnets |
 | `ielts-prod-nat-1b` | Public Subnet 1b | Outbound cho AZ-2 private subnets |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: NAT Gateways trong VPC Console
-{{% /notice %}}
+
 
 #### Tại Sao Hai NAT Gateways?
 
@@ -70,9 +68,7 @@ Lặp lại quy trình cho AZ-2:
 | **Connectivity type** | Public |
 | **Elastic IP allocation ID** | Chọn EIP thứ hai đã allocate |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: NAT Gateway creation form
-{{% /notice %}}
+
 
 #### Cập Nhật Private Route Tables
 
@@ -92,9 +88,7 @@ Sau khi NAT Gateways được tạo, cập nhật private route tables:
 
 Lặp lại cho AZ-2 với `ielts-prod-nat-1b`.
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route table với NAT Gateway route
-{{% /notice %}}
+
 
 #### AWS CLI Commands
 

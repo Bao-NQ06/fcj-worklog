@@ -23,9 +23,7 @@ The VPC contains six subnets across two Availability Zones:
 | `ielts-prod-private-db-1a` | 10.0.21.0/24 | ap-southeast-1a | Private | RDS Primary, ElastiCache |
 | `ielts-prod-private-db-1b` | 10.0.22.0/24 | ap-southeast-1b | Private | RDS Standby |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC Subnets list in AWS Console
-{{% /notice %}}
+
 
 #### Configure Public Subnets
 
@@ -43,9 +41,7 @@ Public subnets must have **Auto-assign public IPv4 address** enabled:
 **Step 3: Repeat for Second Public Subnet**
 1. Repeat steps for `ielts-prod-public-1b`
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Edit subnet settings dialog
-{{% /notice %}}
+
 
 #### Configure Private Subnets
 
@@ -131,9 +127,7 @@ aws ec2 associate-route-table \
 | 10.0.0.0/16 | local |
 | 0.0.0.0/0 | nat-xxx (in AZ-2) |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route table with routes configured
-{{% /notice %}}
+
 
 #### Subnet Tagging for ECS and ALB
 

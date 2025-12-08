@@ -36,9 +36,7 @@ Chọn **VPC and more** để tạo VPC với tất cả components cần thiế
 | **DNS hostnames** | Enable |
 | **DNS resolution** | Enable |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC creation wizard với settings đã cấu hình
-{{% /notice %}}
+
 
 **Bước 3: Review và Create**
 
@@ -54,9 +52,7 @@ Quá trình tạo sẽ tự động tạo:
 - 2 NAT Gateways (một cho mỗi AZ)
 - Route tables cho mỗi subnet tier
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC creation progress và success message
-{{% /notice %}}
+
 
 #### Thay Thế: Tạo VPC Sử Dụng AWS CLI
 
@@ -95,9 +91,7 @@ Sau khi tạo, xác minh các điều sau trong VPC console:
    - Hiển thị Internet Gateway attachment
    - Hiển thị NAT Gateway placements
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: VPC Resource Map hiển thị complete topology
-{{% /notice %}}
+
 
 #### Naming Convention
 

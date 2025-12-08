@@ -23,9 +23,6 @@ VPC chứa sáu subnets trên hai Availability Zones:
 | `ielts-prod-private-db-1a` | 10.0.21.0/24 | ap-southeast-1a | Private | RDS Primary, ElastiCache |
 | `ielts-prod-private-db-1b` | 10.0.22.0/24 | ap-southeast-1b | Private | RDS Standby |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Danh sách VPC Subnets trong AWS Console
-{{% /notice %}}
 
 #### Cấu Hình Public Subnets
 
@@ -43,9 +40,7 @@ Public subnets phải có **Auto-assign public IPv4 address** enabled:
 **Bước 3: Lặp Lại cho Public Subnet Thứ Hai**
 1. Lặp lại các bước cho `ielts-prod-public-1b`
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Edit subnet settings dialog
-{{% /notice %}}
+
 
 #### Cấu Hình Private Subnets
 
@@ -131,9 +126,7 @@ aws ec2 associate-route-table \
 | 10.0.0.0/16 | local |
 | 0.0.0.0/0 | nat-xxx (trong AZ-2) |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route table với routes đã cấu hình
-{{% /notice %}}
+
 
 #### Subnet Tagging cho ECS và ALB
 

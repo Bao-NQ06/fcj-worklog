@@ -187,19 +187,11 @@ Cho social login (Google, Facebook):
 Clone các project repositories:
 
 ```bash
-# Frontend (Next.js)
-git clone https://github.com/your-org/ielts-frontend.git
 
-# Backend (Spring Boot)
-git clone https://github.com/your-org/ielts-backend.git
+git clone https://github.com/Ojt-BugHunters/band-up.git
 
-# Lambda Functions
-git clone https://github.com/your-org/ielts-lambda-functions.git
 ```
 
-{{% notice note %}}
-Thay thế repository URLs bằng repositories thực tế của dự án.
-{{% /notice %}}
 
 #### Lựa Chọn AWS Region
 
@@ -246,15 +238,6 @@ Trước khi tiếp tục, hãy đảm bảo bạn có:
 - [ ] Tên miền (tùy chọn nhưng khuyến nghị)
 - [ ] Source code repositories đã clone
 
-#### Placeholder cho Screenshots
-
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshots sẽ được thêm hiển thị:
-- Tạo IAM user trong AWS Console
-- Xác minh cấu hình AWS CLI
-- Docker Desktop đang chạy
-- Lựa chọn Region trong AWS Console
-{{% /notice %}}
 
 #### Bước Tiếp Theo
 

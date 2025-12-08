@@ -19,9 +19,7 @@ In our Multi-AZ design, we deploy one NAT Gateway per Availability Zone:
 | `ielts-prod-nat-1a` | Public Subnet 1a | Outbound for AZ-1 private subnets |
 | `ielts-prod-nat-1b` | Public Subnet 1b | Outbound for AZ-2 private subnets |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: NAT Gateways in VPC Console
-{{% /notice %}}
+
 
 #### Why Two NAT Gateways?
 
@@ -70,9 +68,7 @@ Repeat the process for AZ-2:
 | **Connectivity type** | Public |
 | **Elastic IP allocation ID** | Select the second allocated EIP |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: NAT Gateway creation form
-{{% /notice %}}
+
 
 #### Update Private Route Tables
 
@@ -92,9 +88,7 @@ After NAT Gateways are created, update the private route tables:
 
 Repeat for AZ-2 with `ielts-prod-nat-1b`.
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Route table with NAT Gateway route
-{{% /notice %}}
+
 
 #### AWS CLI Commands
 

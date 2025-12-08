@@ -22,9 +22,7 @@ Chúng ta sẽ tạo các security groups sau:
 | `ielts-prod-rds-sg` | Database access | RDS PostgreSQL |
 | `ielts-prod-redis-sg` | Cache access | ElastiCache Redis |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Danh sách Security Groups trong VPC Console
-{{% /notice %}}
+
 
 #### Tạo ALB Security Group
 
@@ -52,9 +50,7 @@ Chúng ta sẽ tạo các security groups sau:
 |------|----------|------|-------------|-------------|
 | All traffic | All | All | 0.0.0.0/0 | Allow all outbound |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: ALB Security Group configuration
-{{% /notice %}}
+
 
 #### Tạo ECS Frontend Security Group
 
@@ -231,9 +227,7 @@ Internet → ALB (80/443) → Frontend (3000) → Backend (8080) → RDS (5432)
 | RDS | Backend | 5432 | All |
 | Redis | Backend | 6379 | All |
 
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshot: Bảng tóm tắt Security Group rules
-{{% /notice %}}
+
 
 #### Best Practices
 

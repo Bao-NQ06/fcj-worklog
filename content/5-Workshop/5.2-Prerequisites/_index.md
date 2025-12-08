@@ -187,20 +187,10 @@ For social login (Google, Facebook):
 Clone the project repositories:
 
 ```bash
-# Frontend (Next.js)
-git clone https://github.com/your-org/ielts-frontend.git
 
-# Backend (Spring Boot)
-git clone https://github.com/your-org/ielts-backend.git
+git clone https://github.com/Ojt-BugHunters/band-up.git
 
-# Lambda Functions
-git clone https://github.com/your-org/ielts-lambda-functions.git
 ```
-
-{{% notice note %}}
-Replace the repository URLs with your actual project repositories.
-{{% /notice %}}
-
 #### AWS Region Selection
 
 For this workshop, we recommend using **ap-southeast-1 (Singapore)** region for:
@@ -245,16 +235,6 @@ Before proceeding, ensure you have:
 - [ ] Google Gemini API key obtained
 - [ ] Domain name (optional but recommended)
 - [ ] Source code repositories cloned
-
-#### Placeholder for Screenshots
-
-{{% notice info %}}
-**[PLACEHOLDER]** Screenshots will be added showing:
-- AWS Console IAM user creation
-- AWS CLI configuration verification
-- Docker Desktop running
-- Region selection in AWS Console
-{{% /notice %}}
 
 #### Next Steps
 
