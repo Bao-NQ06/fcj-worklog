@@ -6,32 +6,53 @@ chapter: false
 pre: " <b> 1.9. </b> "
 ---
 
-### Week 9 Objectives: 
+### Week 9 Objectives
 
-* Complete the transition to the **AWS SAM (Serverless Application Model)** development model.
-* **Refactor** and re-implement the basic CRUD functionalities according to the SAM structure.
-* Resolve environment-related issues to achieve a **successful Deployment** status on AWS.
-* Integrate **Docker** to standardize the environment for `sam build`.
+- Complete transition to **AWS SAM (Serverless Application Model)** development framework.
+- **Refactor** and re-implement CRUD functionalities following SAM architecture patterns.
+- Resolve environment-related issues to achieve **successful deployment** status on AWS.
+- Integrate **Docker** for standardized build environment and dependency management.
+- **Workshop: ECS & Container Setup** - Deploy containerized Frontend and Backend services.
 
 ---
 
-### Tasks to be Deployed This Week:
+### Tasks Completed This Week
 
 | Day | Task | Start Date | Completion Date | Resources |
 | :--- | :--- | :--- | :--- | :--- |
-| Monday | - **In-depth research on AWS SAM:** Understand the `template.yaml` structure and how Serverless resources (Lambda, API Gateway) operate within the SAM model. <br> - Plan the detailed migration of existing source code to the SAM structure. | 04/11/2024 | 04/11/2024 | AWS SAM Documentation, AWS Study Group |
-| Tuesday | - **Source Code Refactoring:** Start rewriting basic CRUD functionalities (create/update posts) using the SAM pattern (Handlers and Event Triggers). <br> - **Docker Integration:** Install and configure Docker to ensure the correct Python version for the `sam build` process. | 05/11/2024 | 06/11/2024 | Docker Documentation, SAM CLI |
-| Wednesday | - **Local Debugging and Testing:** Execute `sam local invoke` and `sam local start-api`. <br> - **Encountered critical issues** in the Local environment (Dependency errors, environment conflicts, DynamoDB local connection issues). | 06/11/2024 | 07/11/2024 | SAM CLI Error Reports, Stack Overflow |
-| Thursday | - **Strategic Decision:** The Backend Team decided to switch to a **deploy-then-test** strategy on the actual AWS environment to overcome local debugging barriers, accepting the high risk. <br> - Focus on fixing configuration errors in `template.yaml` in preparation for `sam deploy`. | 07/11/2024 | 08/11/2024 | |
-| Friday | - **Successful Deployment:** Executed `sam deploy --guided` and finally deployed the project to the AWS environment. <br> - **Basic Verification:** Tested the created and functioning API Endpoints, confirming CRUD functionality is online. | 08/11/2024 | 08/11/2024 | AWS CloudFormation Deployment Logs |
+| Monday | - **In-depth research on AWS SAM:** Understand `template.yaml` structure, SAM CLI commands, and how Serverless resources (Lambda, API Gateway) operate within SAM model. <br> - Plan detailed migration strategy: Convert existing Lambda functions to SAM-compatible structure. <br> - Study SAM local testing capabilities (`sam local invoke`, `sam local start-api`). | 04/11/2024 | 04/11/2024 | AWS SAM Documentation, AWS Study Group |
+| Tuesday | - **Source Code Refactoring:** Rewrite CRUD functionalities (Create/Read operations) using SAM patterns (Lambda handlers and API Gateway events). <br> - **Docker Integration:** Install and configure Docker to ensure consistent Python runtime environment for `sam build` process. <br> - Create Dockerfile for Lambda layer dependencies. <br> - **Workshop Activity:** Create ECR repositories for Frontend (Next.js) and Backend (Spring Boot) container images. | 05/11/2024 | 06/11/2024 | Docker Documentation, SAM CLI, [Workshop 5.4](5-Workshop/5.4-ECS-Setup/) |
+| Wednesday | - **Local Debugging and Testing:** Execute `sam local invoke` to test individual Lambda functions. <br> - **Encountered critical issues** in Local environment: Dependency conflicts, Python version mismatches, DynamoDB local connection problems. <br> - Attempt to resolve local testing barriers through configuration adjustments. | 06/11/2024 | 07/11/2024 | SAM CLI Error Reports, Stack Overflow |
+| Thursday | - **Strategic Decision:** Backend Team decided to adopt **deploy-then-test** strategy on actual AWS environment to overcome local debugging limitations, accepting calculated risk. <br> - Focus on fixing configuration errors in `template.yaml` (resource definitions, IAM permissions, environment variables). <br> - Validate SAM template syntax and resource dependencies. | 07/11/2024 | 08/11/2024 | CloudFormation Template Validator |
+| Friday | - **Successful Deployment:** Executed `sam deploy --guided` and successfully deployed project to AWS environment. <br> - **Basic Verification:** Tested created API endpoints using Postman/curl, confirming CRUD functionality is operational. <br> - Document deployment process and configuration for team reference. <br> - **Workshop Activity:** Build and push Docker images to ECR, create ECS Task Definitions and deploy ECS Services with Fargate. | 08/11/2024 | 08/11/2024 | AWS CloudFormation Deployment Logs, [Workshop 5.4](5-Workshop/5.4-ECS-Setup/) |
 
 ---
 
-### Week 9 Achievements: 
+### Week 9 Achievements
 
-* **Completed the technology transition** to the **AWS SAM** development model for the entire project.
-* **Successfully refactored** the basic CRUD functionalities into the SAM Serverless structure.
-* Resolved environment issues by using **Docker** to ensure the `sam build` process uses the required Python version correctly.
-* **Achieved a critical milestone:** Successfully deployed the project to the AWS environment, overcoming local debugging hurdles.
-* The **Travel-Guided project** now has a working API version on a real Cloud environment (though deeper testing is still required).
-* ...
+- **Completed technology transition** to **AWS SAM** development model for entire project.
+- **Successfully refactored** CRUD functionalities into SAM Serverless structure with proper handler organization.
+- Resolved environment issues by using **Docker** to ensure `sam build` process uses correct Python version and dependencies.
+- **Achieved critical milestone:** Successfully deployed project to AWS environment, overcoming local debugging hurdles.
+- The **Bandup IELTS project** now has working API version on real Cloud environment (though deeper testing still required).
+- Established deployment workflow and best practices for team collaboration.
+- Created comprehensive `template.yaml` with proper resource definitions and IAM permissions.
+
+**Workshop Progress - ECS & Container Setup:**
+- Created ECR repositories for Frontend (Next.js) and Backend (Spring Boot) container images
+- Built and pushed Docker images to ECR with proper tagging strategy
+- Created ECS Task Definitions with CPU/memory specifications (Frontend: 512 CPU/1024MB, Backend: 1024 CPU/2048MB)
+- Set up ECS Cluster with Fargate capacity providers
+- Deployed ECS Services in active-passive Multi-AZ pattern (2 replicas active, 1 standby)
+- Configured Service Connect for internal service discovery between Frontend and Backend
+- Implemented health checks for automatic task recovery
+
+**Key Takeaways:**
+- SAM simplifies serverless application development with infrastructure as code
+- Docker ensures consistent build environments across different development machines
+- Deploy-then-test strategy can be viable when local testing is problematic
+- SAM templates provide single source of truth for serverless infrastructure
+- Proper IAM permissions in SAM templates are critical for Lambda function execution
+- ECS Fargate eliminates server management overhead for containerized applications
+- Multi-AZ deployment ensures high availability for container services
+- Service Connect simplifies internal service communication without load balancers
