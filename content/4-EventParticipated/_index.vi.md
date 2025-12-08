@@ -9,7 +9,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 1: Kick-off Chương Trình The First Cloud Journey (FCJ)
+## [Event 1: Kick-off Chương Trình The First Cloud Journey (FCJ)](4.1-Event1/)
 - **Thời gian tổ chức:** 06/09/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -18,7 +18,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 2: DX<inAction> Talk#7: Reinventing DevSecOps with AWS Generative AI
+## [Event 2: DX<inAction> Talk#7: Reinventing DevSecOps with AWS Generative AI](4.2-Event2/)
 - **Thời gian tổ chức:** 16/10/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -27,7 +27,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 3: AWS Cloud Mastery Series #1 — AI/ML/GenAI on AWS
+## [Event 3: AWS Cloud Mastery Series #1 — AI/ML/GenAI on AWS](4.3-Event3/)
 - **Thời gian tổ chức:** 15/11/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -36,7 +36,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 4: AWS Cloud Mastery Series #2 — DevOps on AWS
+## [Event 4: AWS Cloud Mastery Series #2 — DevOps on AWS](4.4-Event4/)
 - **Thời gian tổ chức:** 17/11/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -45,7 +45,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 5: AWS Cloud Mastery Series #3 — Theo AWS Well-Architected Security Pillar
+## [Event 5: AWS Cloud Mastery Series #3 — Theo AWS Well-Architected Security Pillar](4.5-Event5/)
 - **Thời gian tổ chức:** 29/11/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -54,7 +54,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 6: Vietnam Cloud Day HCMC Connect Edition
+## [Event 6: Vietnam Cloud Day HCMC Connect Edition](4.6-Event6/)
 - **Thời gian tổ chức:** 18/09/2025
 - **Địa điểm:** Tầng 26, Tòa tháp Bitexco, 02 Đường Hải Triều, quận Sài Gòn, Thành Phố Hồ Chí Minh
 - **Vai trò:** Người tham dự
@@ -63,7 +63,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 7: AI-Driven Development Life Cycle: Tái tưởng tượng Kỹ thuật Phần mềm
+## [Event 7: AI-Driven Development Life Cycle: Tái tưởng tượng Kỹ thuật Phần mềm](4.7-Event7/)
 - **Thời gian tổ chức:** 18/09/2025
 - **Địa điểm:** Thành Phố Hồ Chí Minh / Online
 - **Vai trò:** Người tham dự

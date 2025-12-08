@@ -9,7 +9,7 @@ pre: " <b> 4. </b> "
 
 
 
-## Event 1 — Kick-off: The First Cloud Journey (FCJ)  
+## [Event 1 — Kick-off: The First Cloud Journey (FCJ)](4.1-Event1/)  
 - **Date:** 06/09/2025  
 - **Location:** Online  
 - **Role:** Attendee  
@@ -18,7 +18,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 2 — DX<inAction> Talk#7: Reinventing DevSecOps with AWS Generative AI  
+## [Event 2 — DX<inAction> Talk#7: Reinventing DevSecOps with AWS Generative AI](4.2-Event2/)  
 - **Date:** 16/10/2025  
 - **Location:** Bitexco Tower, Ho Chi Minh City / Online  
 - **Role:** Attendee  
@@ -27,7 +27,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 3 — AWS Cloud Mastery Series #1: AI/ML/GenAI on AWS  
+## [Event 3 — AWS Cloud Mastery Series #1: AI/ML/GenAI on AWS](4.3-Event3/)  
 - **Date:** 15/11/2025  
 - **Location:** Bitexco Tower, Ho Chi Minh City / Online  
 - **Role:** Attendee  
@@ -36,7 +36,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 4 — AWS Cloud Mastery Series #2: DevOps on AWS  
+## [Event 4 — AWS Cloud Mastery Series #2: DevOps on AWS](4.4-Event4/)  
 - **Date:** 17/11/2025  
 - **Location:** Bitexco Tower, Ho Chi Minh City / Online  
 - **Role:** Attendee  
@@ -45,7 +45,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 5 — AWS Cloud Mastery Series #3: AWS Well-Architected Security Pillar  
+## [Event 5 — AWS Cloud Mastery Series #3: AWS Well-Architected Security Pillar](4.5-Event5/)  
 - **Date:** 29/11/2025  
 - **Location:** Bitexco Tower, Ho Chi Minh City / Online  
 - **Role:** Attendee  
@@ -54,7 +54,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 6 — Vietnam Cloud Day HCMC Connect Edition  
+## [Event 6 — Vietnam Cloud Day HCMC Connect Edition](4.6-Event6/)  
 - **Date:** 18/09/2025  
 - **Location:** Ho Chi Minh City (main hall) / Online  
 - **Role:** Attendee  
@@ -63,7 +63,7 @@ pre: " <b> 4. </b> "
 
 ---
 
-## Event 7 — AI-Driven Development Life Cycle: Reimagining Software Engineering  
+## [Event 7 — AI-Driven Development Life Cycle: Reimagining Software Engineering](4.7-Event7/)  
 - **Date:** 18/09/2025  
 - **Location:** Ho Chi Minh City / Online  
 - **Role:** Attendee  
