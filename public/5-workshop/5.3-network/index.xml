@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Network &amp; Security Infrastructure on Internship Report</title><link>https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/</link><description>Recent content in Network &amp; Security Infrastructure on Internship Report</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 09 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/index.xml" rel="self" type="application/rss+xml"/><item><title>IAM Roles for ECS</title><link>https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/5.3.3-iam/</link><pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate><guid>https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/5.3.3-iam/</guid><description>&lt;p&gt;To allow Amazon ECS to manage your containers, it needs specific permissions. We must create an &lt;strong&gt;IAM Role&lt;/strong&gt; that authorizes the ECS agent to pull container images from Amazon ECR and send logs to Amazon CloudWatch on your behalf.&lt;/p&gt;
+&lt;h3 id="create-ecstaskexecutionrole"&gt;Create ecsTaskExecutionRole&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to the &lt;strong&gt;IAM Dashboard&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;In the left navigation pane, choose &lt;strong&gt;Roles&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Create role&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Step 1: Trusted Entity&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Trusted entity type:&lt;/strong&gt; Select &lt;code&gt;AWS service&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Service or use case:&lt;/strong&gt; Choose &lt;code&gt;Elastic Container Service&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;Elastic Container Service Task&lt;/code&gt; from the options below.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Next&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Step 2: Add Permissions&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>VPC Endpoints Setup</title><link>https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/5.3.4-endpoints/</link><pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate><guid>https://thienluhoan.github.io/workshop-template/5-workshop/5.3-network/5.3.4-endpoints/</guid><description>&lt;p&gt;To ensure security, our backend services running in Private Subnets should not access key AWS services over the public internet. Instead, we use &lt;strong&gt;AWS PrivateLink&lt;/strong&gt; (VPC Endpoints) to keep this traffic within the AWS network.&lt;/p&gt;
+&lt;p&gt;We will create &lt;strong&gt;4 Endpoints&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Interface Endpoints:&lt;/strong&gt; For ECR (Docker &amp;amp; API) and CloudWatch Logs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gateway Endpoint:&lt;/strong&gt; For Amazon S3.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="1-create-interface-endpoints-ecr--cloudwatch"&gt;1. Create Interface Endpoints (ECR &amp;amp; CloudWatch)&lt;/h3&gt;
+&lt;p&gt;We will start by creating the endpoint for &lt;strong&gt;ECR Docker&lt;/strong&gt; (&lt;code&gt;ecr.dkr&lt;/code&gt;). The process is identical for &lt;strong&gt;ECR API&lt;/strong&gt; (&lt;code&gt;ecr.api&lt;/code&gt;) and &lt;strong&gt;CloudWatch&lt;/strong&gt; (&lt;code&gt;logs&lt;/code&gt;).&lt;/p&gt;</description></item></channel></rss>

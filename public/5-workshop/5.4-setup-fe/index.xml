@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frontend Deployment (ECS Fargate) on Internship Report</title><link>https://thienluhoan.github.io/workshop-template/5-workshop/5.4-setup-fe/</link><description>Recent content in Frontend Deployment (ECS Fargate) on Internship Report</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 09 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://thienluhoan.github.io/workshop-template/5-workshop/5.4-setup-fe/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Task Definition &amp; Service</title><link>https://thienluhoan.github.io/workshop-template/5-workshop/5.4-setup-fe/5.4.4-task/</link><pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate><guid>https://thienluhoan.github.io/workshop-template/5-workshop/5.4-setup-fe/5.4.4-task/</guid><description>&lt;p&gt;In this final step for the frontend, we define how our application container should run (Task Definition) and deploy it as a scalable service (ECS Service) connected to our Load Balancer.&lt;/p&gt;
+&lt;h3 id="1-create-task-definition"&gt;1. Create Task Definition&lt;/h3&gt;
+&lt;p&gt;The Task Definition serves as a blueprint for our application.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Amazon ECS&lt;/strong&gt; &amp;gt; &lt;strong&gt;Task definitions&lt;/strong&gt; &amp;gt; &lt;strong&gt;Create new task definition&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task definition configuration:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Task definition family:&lt;/strong&gt; &lt;code&gt;bandup-frontend&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Launch type:&lt;/strong&gt; &lt;code&gt;AWS Fargate&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS/Architecture:&lt;/strong&gt; &lt;code&gt;Linux/X86_64&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task size:&lt;/strong&gt; &lt;code&gt;.5 vCPU&lt;/code&gt; and &lt;code&gt;1 GB&lt;/code&gt; Memory (Sufficient for our Next.js frontend).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Task Role &amp;amp; Task Execution Role:&lt;/strong&gt; Select &lt;code&gt;ecsTaskExecutionRole&lt;/code&gt; (Created in section 5.3.3).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="../../images/5-Workshop/5.4-fe/fe-task-1.png" alt="Task Definition Infrastructure"&gt;&lt;/p&gt;</description></item></channel></rss>
