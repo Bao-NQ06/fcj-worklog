@@ -44,7 +44,172 @@ Hệ Thống Web Tự Học IELTS cung cấp một nền tảng thống nhất v
 Nền tảng sử dụng kiến trúc web full-stack hiện đại được thiết kế để có khả năng mở rộng, cộng tác thời gian thực và tích hợp AI. Hệ thống bao gồm năm module chính hoạt động cùng nhau để cung cấp trải nghiệm học IELTS toàn diện. Hạ tầng sử dụng triển khai **active-passive Multi-AZ** trên AWS ECS để đảm bảo tính sẵn sàng cao, trong đó AZ-1 xử lý toàn bộ lưu lượng hoạt động và AZ-2 đóng vai trò dự phòng để chuyển đổi dự phòng tự động.
 
 **Tổng Quan Kiến Trúc Hệ Thống:**
-![System Architecture](/images/AWS-Bandup-Architecture.png)
+![Kiến Trúc Hệ Thống](/images/2-Proposal/AWS-Bandup-Architecture.png)
+
+#### 3.1. Tổng Quan Kiến Trúc
+Hệ Thống Web Tự Học IELTS được xây dựng trên hạ tầng đám mây AWS với kiến trúc nhiều lớp đảm bảo tính sẵn sàng cao, khả năng mở rộng và bảo mật. Hệ thống theo cách tiếp cận microservices với backend nguyên khối cho các dịch vụ cốt lõi và kiến trúc serverless cho các tính năng AI.
+
+**Nguyên Tắc Kiến Trúc Chính:**
+- **Tính Sẵn Sàng Cao**: Triển khai Multi-AZ active-passive với chuyển đổi dự phòng tự động
+- **Khả Năng Mở Rộng**: Mở rộng ngang với ECS Auto Scaling và Lambda functions serverless
+- **Bảo Mật**: Bảo mật nhiều lớp với WAF, cô lập VPC, và mã hóa khi lưu trữ và truyền tải
+- **Hiệu Suất**: Phân phối CDN, các lớp caching, và truy vấn database được tối ưu
+- **Hiệu Quả Chi Phí**: Dịch vụ AI serverless, tài nguyên standby active-passive, và định giá pay-per-use
+
+#### 3.2. Kiến Trúc Mạng
+Hạ tầng mạng được xây dựng trong **Virtual Private Cloud (VPC)** trải dài hai Availability Zones (AZ-1 và AZ-2) để đảm bảo dự phòng và tính sẵn sàng cao.
+
+**Cấu Trúc VPC:**
+- **Public Subnets (AZ-1 & AZ-2)**: 
+  - Application Load Balancer (ALB) endpoints
+  - NAT Gateways cho outbound internet access
+  - Bastion hosts cho truy cập an toàn (tùy chọn)
+- **Private Subnets (AZ-1 & AZ-2)**:
+  - ECS Fargate tasks (Next.js frontend và Spring Boot backend)
+  - Amazon RDS PostgreSQL instances
+  - Amazon ElastiCache Redis clusters
+  - Giao tiếp dịch vụ nội bộ
+
+**Thành Phần Mạng:**
+- **Route 53**: Quản lý DNS và định tuyến domain
+- **AWS Certificate Manager (ACM)**: Chứng chỉ SSL/TLS cho HTTPS
+- **AWS WAF**: Web Application Firewall bảo vệ chống các khai thác web phổ biến
+- **Internet Gateway**: Truy cập internet công cộng cho public subnets
+- **NAT Gateways**: Truy cập internet outbound cho private subnets
+- **Security Groups**: Quy tắc firewall stateful kiểm soát lưu lượng giữa các thành phần
+
+**Luồng Lưu Lượng:**
+1. Yêu cầu người dùng → Route 53 → CloudFront CDN (cho tài nguyên tĩnh)
+2. Yêu cầu API → Route 53 → AWS WAF → Application Load Balancer
+3. ALB định tuyến đến ECS tasks trong private subnets (AZ-1 active, AZ-2 standby)
+4. ECS tasks giao tiếp với RDS, ElastiCache, và S3 qua private subnets
+5. Yêu cầu dịch vụ AI → API Gateway → SQS → Lambda functions
+
+#### 3.3. Kiến Trúc Ứng Dụng
+Lớp ứng dụng bao gồm các dịch vụ frontend và backend được triển khai trên **Amazon ECS (Fargate)** với cấu hình Multi-AZ active-passive.
+
+**Lớp Frontend (Next.js):**
+- **Triển Khai**: Ứng dụng Next.js được container hóa trên ECS Fargate
+- **Vị Trí**: Private subnets trong AZ-1 (active) và AZ-2 (standby)
+- **Tính Năng**:
+  - Server-side rendering (SSR) cho tối ưu SEO
+  - Phân phối tài nguyên tĩnh qua CloudFront CDN
+  - WebRTC thời gian thực cho cuộc gọi video/thoại phòng học
+  - Socket.io client cho nhắn tin thời gian thực
+  - Thiết kế responsive cho mobile và desktop
+
+**Lớp Backend (Spring Boot):**
+- **Triển Khai**: API REST Spring Boot nguyên khối trên ECS Fargate
+- **Vị Trí**: Private subnets trong AZ-1 (active) và AZ-2 (standby)
+- **Thành Phần**:
+  - RESTful API endpoints cho tất cả modules
+  - Spring Security cho xác thực và phân quyền
+  - Spring WebSocket cho tính năng thời gian thực
+  - Quản lý JWT token
+  - Tích hợp OAuth 2.0 (Google, Facebook)
+  - Xử lý tải tệp lên cho tích hợp S3
+
+**Cân Bằng Tải & Tính Sẵn Sàng Cao:**
+- **Application Load Balancer (ALB)**:
+  - Định tuyến lưu lượng đến các ECS tasks khỏe mạnh trong AZ-1 (active)
+  - Health checks mỗi 30 giây
+  - Chuyển đổi dự phòng tự động sang AZ-2 nếu AZ-1 không khả dụng
+  - SSL/TLS termination với chứng chỉ ACM
+  - Sticky sessions cho kết nối WebSocket
+
+#### 3.4. Kiến Trúc Dữ Liệu
+Lớp dữ liệu sử dụng kết hợp cơ sở dữ liệu quan hệ và NoSQL, cùng với caching để tối ưu hiệu suất.
+
+**Cơ Sở Dữ Liệu Chính:**
+- **Amazon RDS PostgreSQL (Multi-AZ)**:
+  - **Primary Instance**: db.t3.medium trong AZ-1 (active)
+  - **Standby Instance**: db.t3.medium trong AZ-2 (passive, sao chép đồng bộ)
+  - **Dữ Liệu**: Người dùng, blogs, phiên học, bài kiểm tra thực hành, metadata flashcards
+  - **Sao Lưu**: Sao lưu tự động hàng ngày với lưu giữ 7 ngày
+  - **Tính Sẵn Sàng Cao**: Chuyển đổi dự phòng tự động sang standby trong < 60 giây
+  - **Mã Hóa**: Khi lưu trữ (AES-256) và khi truyền tải (SSL/TLS)
+
+**Lớp Caching:**
+- **Amazon ElastiCache (Redis)**:
+  - Quản lý session và authentication tokens
+  - Caching dữ liệu truy cập thường xuyên (blog posts, user profiles)
+  - Bảng xếp hạng và thống kê thời gian thực
+  - Rate limiting và API throttling
+
+**Lưu Trữ Object:**
+- **Amazon S3**:
+  - Tệp người dùng tải lên (hình ảnh, tài liệu, bản ghi âm)
+  - Tài nguyên tĩnh (trước khi phân phối CloudFront)
+  - Lưu trữ sao lưu cho RDS snapshots
+  - Chính sách lifecycle để tối ưu chi phí
+
+**Cơ Sở Dữ Liệu NoSQL (Dịch Vụ AI):**
+- **Amazon DynamoDB**:
+  - Kết quả đánh giá AI (điểm Writing và Speaking)
+  - Flashcards được tạo từ RAG pipeline
+  - Theo dõi tiến độ người dùng cho tính năng AI
+  - Mở rộng on-demand cho workloads biến đổi
+
+#### 3.5. Kiến Trúc Bảo Mật
+Bảo mật nhiều lớp đảm bảo bảo vệ dữ liệu và tính toàn vẹn hệ thống ở mọi cấp độ.
+
+**Bảo Mật Mạng:**
+- **AWS WAF**: Bảo vệ chống SQL injection, XSS, tấn công DDoS
+- **Security Groups**: Quy tắc firewall hạn chế (nguyên tắc quyền tối thiểu)
+- **VPC Isolation**: Private subnets không có truy cập internet trực tiếp
+
+**Bảo Mật Dữ Liệu:**
+- **Mã Hóa Khi Lưu Trữ**:
+  - RDS: Mã hóa AES-256
+  - S3: Mã hóa phía server (SSE-S3)
+  - DynamoDB: Mã hóa khi lưu trữ được bật
+- **Mã Hóa Khi Truyền Tải**:
+  - HTTPS/TLS 1.2+ cho tất cả giao tiếp bên ngoài
+  - SSL/TLS cho kết nối database
+
+**Quản Lý Danh Tính & Truy Cập:**
+- **AWS IAM**: Kiểm soát truy cập dựa trên vai trò cho dịch vụ AWS
+- **Spring Security**: Xác thực cấp ứng dụng với JWT tokens
+- **AWS Secrets Manager**: Lưu trữ an toàn API keys và credentials
+
+#### 3.6. Pipeline CI/CD
+Pipeline triển khai tự động đảm bảo các bản phát hành nhất quán và đáng tin cậy.
+
+**Kiểm Soát Mã Nguồn:**
+- **Git Repository**: Phiên bản mã và cộng tác
+- **Chiến Lược Branch**: Branch main cho production, feature branches cho development
+
+**Thành Phần CI/CD:**
+- **GitLab Webhook** (hoặc **GitHub Actions**): Kích hoạt pipeline khi push mã
+- **AWS CodePipeline**: Điều phối workflow triển khai
+- **AWS CodeBuild**: Build và test application code
+- **Amazon ECR**: Container registry cho Docker images
+
+**Luồng Triển Khai:**
+1. Developer push mã lên repository
+2. Webhook kích hoạt CodePipeline
+3. CodeBuild compile và test mã
+4. CodeBuild tạo Docker images và push lên ECR
+5. ECS service cập nhật với task definitions mới
+6. Rolling deployment: Tasks mới khởi động, health checks pass, tasks cũ terminate
+
+#### 3.7. Giám Sát & Quan Sát
+Giám sát toàn diện đảm bảo sức khỏe và hiệu suất hệ thống.
+
+**Giám Sát Ứng Dụng:**
+- **Amazon CloudWatch**:
+  - **Metrics**: CPU, memory, network utilization cho ECS tasks
+  - **Logs**: Application logs từ Next.js và Spring Boot
+  - **Alarms**: Cảnh báo tự động cho lỗi, độ trễ cao, cạn kiệt tài nguyên
+  - **Dashboards**: Dashboard tùy chỉnh cho các metrics quan trọng
+
+**Cảnh Báo:**
+- **CloudWatch Alarms**:
+  - Tỷ lệ lỗi cao (> 5% lỗi 5xx)
+  - Độ trễ cao (> 2 giây p95)
+  - Tính sẵn sàng thấp (< 99% uptime)
+  - Cạn kiệt tài nguyên (CPU > 80%, Memory > 85%)
+- **SNS Notifications**: Cảnh báo Email/SMS cho các alarm nghiêm trọng
 
 ### Công Nghệ Sử Dụng
 **Frontend:**
@@ -73,13 +238,46 @@ Nền tảng sử dụng kiến trúc web full-stack hiện đại được thi�
 - **Amazon S3**: Lưu trữ tệp và phương tiện
 - **Amazon CloudFront**: CDN cho tài nguyên tĩnh
 - **Amazon CloudWatch**: Giám sát và ghi log
+- **Amazon API Gateway**: RESTful API endpoint cho yêu cầu dịch vụ AI
+- **Amazon SQS**: Message queue cho xử lý AI bất đồng bộ với Dead Letter Queue (DLQ)
+- **AWS Lambda**: Serverless functions cho đánh giá AI và tạo flashcard
+- **Amazon DynamoDB**: NoSQL database cho lưu trữ kết quả đánh giá AI và flashcards
+- **Amazon Bedrock**: Dịch vụ AI model (Titan V2 Embeddings, GPT-OSS)
+- **Amazon OpenSearch Service** (tùy chọn): Vector store cho RAG document embeddings
 
 **Dịch Vụ Bên Thứ Ba:**
-- **Google Gemini Flash API (Free Tier)**: Đánh giá Speaking/Writing được hỗ trợ bởi AI và tạo nội dung
+- **Google Gemini Flash API (Free Tier)**: Đánh giá Speaking/Writing được hỗ trợ bởi AI và tạo smart query cho RAG
+- **Amazon Bedrock (GPT-OSS)**: AI model thay thế cho đánh giá và tạo nội dung
+- **Amazon Titan V2 Embeddings**: Vector embeddings cho document chunks trong tạo flashcard dựa trên RAG
 - **API Từ Điển Miễn Phí**: Định nghĩa và ví dụ từ
 - **Thư viện dịch mã nguồn mở**: Dịch thuật nhận biết ngữ cảnh (thay thế cho API trả phí)
 
-### Thiết Kế Thành Phần
+#### 3.8. Kiến Trúc Dịch Vụ AI (Serverless)
+Dịch vụ AI được triển khai như kiến trúc serverless hoàn toàn sử dụng các dịch vụ AWS để xử lý đánh giá và tạo nội dung được hỗ trợ bởi AI.
+
+**Thành Phần Kiến Trúc:**
+
+**1. API Gateway (Điểm Vào)**
+- RESTful API endpoint cho yêu cầu dịch vụ AI
+- Endpoints: `/ai/writing-assessment`, `/ai/speaking-assessment`, `/ai/generate-flashcards`
+
+**2. Amazon SQS (Message Queue)**
+- Tách API Gateway khỏi Lambda functions cho xử lý bất đồng bộ
+- Dead Letter Queue (DLQ) cho messages thất bại
+
+**3. AWS Lambda Functions:**
+- **Lambda 1 - Đánh Giá Writing**: Nhận bài viết, gọi AI (Bedrock/Gemini), lưu kết quả vào DynamoDB
+- **Lambda 2 - Đánh Giá Speaking**: Transcribe audio, đánh giá với AI, lưu kết quả
+- **Lambda 3 - Tạo Flashcard (RAG)**: Document chunking, Titan V2 embeddings, smart query generation, RAG-based flashcard generation
+
+**4. Amazon DynamoDB**: Lưu trữ kết quả đánh giá AI và flashcards
+
+**5. Amazon Bedrock**: Titan V2 Embeddings và GPT-OSS cho AI processing
+
+**Lợi Ích Serverless:** Tự động mở rộng, pay-per-use, không quản lý server
+
+#### 3.9. Thiết Kế Thành Phần
+Hệ thống bao gồm năm module chức năng chính, mỗi module được tích hợp với kiến trúc cốt lõi được mô tả ở trên. Mỗi module tận dụng hạ tầng chung (ECS, RDS, ElastiCache, S3) trong khi duy trì sự phân tách rõ ràng.
 
 **1. Module Quản Lý Người Dùng:**
 - Hệ thống xác thực nhiều cấp (Khách, Thành viên, Premium, Quản trị viên)
@@ -564,3 +762,7 @@ Nền tảng sử dụng kiến trúc web full-stack hiện đại được thi�
 - Giữ chân người dùng: 60%+ người dùng hoạt động hàng tháng
 - Điểm NPS: 50+ (cho thấy sự hài lòng mạnh mẽ của người dùng)
 - Cải thiện điểm IELTS trung bình: Tăng 0.5-1.0 band
+
+## Kế Hoạch Dự Án
+
+<iframe src="/images/2-Proposal/Bandup-Proposal.pdf" width="100%" height="800" style="border:0;"></iframe>
