@@ -18,7 +18,7 @@ Configure two CodeBuild projects (frontend and backend) and a trigger from GitLa
 ### Create CodeBuild Projects & Connect GitLab Repository
 
 1. In the creating new CodeBuild Project configuration section, select Default project.
-![CI/CD overview placeholder](images/5-Workshop/5.7-CICD/codebuild-1.png)
+![CI/CD overview placeholder](/images/5-Workshop/5.7-CICD/codebuild-1.png)
 1. In the Source section, choose GitLab and Band-Up repository.
 ![CI/CD overview placeholder](/images/5-Workshop/5.7-CICD/codebuild-2.png)
 1. Leave default configurations for Environment.
